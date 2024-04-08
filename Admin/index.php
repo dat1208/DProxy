@@ -61,6 +61,10 @@
                                     </button>
                                 </div>
                             </div><!-- end card-body -->
+
+                            <form action="runCommand.php" method="post">
+                            <input type="submit" value="Run Command">
+                            </form>
                         </div><!-- end card -->
                     </div><!-- end col -->
                 </div><!-- end row -->
@@ -95,14 +99,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-  $("#restartBtn").click(function(){
-    console.log("Clicked");
-    $.get("command_functions.php?restart_squid", function(data, status){
-      alert("Dịch vụ Squid đã khởi động lại thành công.");
-    });
-  });
-});
 
 function restartSquid() {
     var xhr = new XMLHttpRequest();
