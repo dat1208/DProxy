@@ -1,11 +1,12 @@
 <?php include 'layouts/session.php'; ?>
 <?php include 'layouts/head-main.php'; ?>
+<?php include 'vendor/command_functions.php'; ?>
 
 <head>
     <title><?php echo $language["Dashboard"]; ?> | DProxy</title>
 
     <?php include 'layouts/head.php'; ?>
-
+    
     <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     
     <?php include 'layouts/head-style.php'; ?>
@@ -44,7 +45,25 @@
                 </div>
                 <!-- end page title -->
 
-                
+                <div class="row">
+
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Test Function Area</h4>
+                               
+                            </div><!-- end card header -->
+
+                            <div class="card-body">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button id="restartBtn" type="button" class="btn btn-dark waves-effect waves-light">
+                                    Restart Squid Service <i class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i> 
+                                    </button>
+                                </div>
+                            </div><!-- end card-body -->
+                        </div><!-- end card -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
                 <!-- end row -->
             </div>
             <!-- container-fluid -->
@@ -57,7 +76,6 @@
 
 </div>
 <!-- END layout-wrapper -->
-
 
 <!-- JAVASCRIPT -->
 <?php include 'layouts/vendor-scripts.php'; ?>
@@ -74,6 +92,18 @@
 
 <!-- App js -->
 <script src="assets/js/app.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#restartBtn").click(function(){
+    console.log("Clicked");
+    $.get("command_functions.php?restart_squid", function(data, status){
+      alert("Dịch vụ Squid đã khởi động lại thành công.");
+    });
+  });
+});
+</script>
 
 </body>
 
