@@ -1,6 +1,6 @@
 <?php include 'layouts/session.php'; ?>
 <?php include 'layouts/head-main.php'; ?>
-<?php include 'vendor/command_functions.php'; ?>
+<?php require 'vendor/command_functions.php'; ?>
 
 <head>
     <title><?php echo $language["Dashboard"]; ?> | DProxy</title>
@@ -56,7 +56,7 @@
 
                             <div class="card-body">
                                 <div class="d-flex flex-wrap gap-2">
-                                    <button id="restartBtn" type="button" class="btn btn-dark waves-effect waves-light">
+                                    <button onclick= "restartSquid()" type="button" class="btn btn-dark waves-effect waves-light">
                                     Restart Squid Service <i class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i> 
                                     </button>
                                 </div>
@@ -103,6 +103,17 @@ $(document).ready(function(){
     });
   });
 });
+
+function restartSquid() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "restartSquid.php", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            alert('Squid restarted successfully');
+        }
+    }
+    xhr.send();
+}
 </script>
 
 </body>
