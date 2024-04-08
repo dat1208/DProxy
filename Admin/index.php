@@ -1,6 +1,5 @@
 <?php include 'layouts/session.php'; ?>
 <?php include 'layouts/head-main.php'; ?>
-<?php require 'vendor/command_functions.php'; ?>
 
 <head>
     <title><?php echo $language["Dashboard"]; ?> | DProxy</title>
@@ -56,14 +55,20 @@
 
                             <div class="card-body">
                                 <div class="d-flex flex-wrap gap-2">
-                                    <button onclick= "restartSquid()" type="button" class="btn btn-dark waves-effect waves-light">
+                                    <button onclick= "runCommand.php" type="button" class="btn btn-dark waves-effect waves-light">
                                     Restart Squid Service <i class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i> 
                                     </button>
                                 </div>
                             </div><!-- end card-body -->
 
-                            <form action="runCommand.php" method="post">
-                            <input type="submit" value="Run Command">
+                            <form action="restartCommand.php" method="post">
+                            <input type="submit" value="Restart Command">
+                            </form>
+                            <form action="startCommand.php" method="post">
+                            <input type="submit" value="Start Command">
+                            </form>
+                            <form action="stopCommand.php" method="post">
+                            <input type="submit" value="Stop Command">
                             </form>
                         </div><!-- end card -->
                     </div><!-- end col -->
@@ -99,17 +104,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-
-function restartSquid() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "restartSquid.php", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            alert('Squid restarted successfully');
-        }
-    }
-    xhr.send();
-}
 </script>
 
 </body>
