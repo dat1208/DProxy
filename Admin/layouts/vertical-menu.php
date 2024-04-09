@@ -36,7 +36,12 @@
         </div>
 
         <div class="d-flex">
-
+            
+            <div class="app-search d-none d-lg-block mx-2">
+                <div class="position-relative">
+                    <input type="text" class="form-control" placeholder="<?php shell_exec('sudo systemctl is-active squid'); ?>">
+                </div>
+            </div>
             <div class="dropdown d-inline-block d-lg-none ms-2">
                 <button type="button" class="btn header-item" id="page-header-search-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -55,21 +55,29 @@
 
                             <div class="card-body">
                                 <div class="d-flex flex-wrap gap-2">
-                                    <button onclick= "runCommand.php" type="button" class="btn btn-dark waves-effect waves-light">
-                                    Restart Squid Service <i class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i> 
-                                    </button>
+                                <form action="restartCommand.php" method="post">
+                                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Restart Command">
+                                </form>
+                                </div>
+                            </div><!-- end card-body -->
+                            <div class="card-body">
+                                <div class="d-flex flex-wrap gap-2">
+                                <form action="startCommand.php" method="post">
+                                 <input class="btn btn-dark waves-effect waves-light" type="submit" value="Start Command">
+                                </form>
+                                </div>
+                            </div><!-- end card-body -->
+                            <div class="card-body">
+                             <div class="d-flex flex-wrap gap-2">
+                            <form action="stopCommand.php" method="post">
+                            <input classdiv="btn btn-dark waves-effect waves-light" type="submit" value="Stop Command">
+                            </form>
                                 </div>
                             </div><!-- end card-body -->
 
-                            <form action="restartCommand.php" method="post">
-                            <input type="submit" value="Restart Command">
-                            </form>
-                            <form action="startCommand.php" method="post">
-                            <input type="submit" value="Start Command">
-                            </form>
-                            <form action="stopCommand.php" method="post">
-                            <input type="submit" value="Stop Command">
-                            </form>
+                            
+                            
+                            
                         </div><!-- end card -->
                     </div><!-- end col -->
                 </div><!-- end row -->
