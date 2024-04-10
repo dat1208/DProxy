@@ -4,7 +4,23 @@
 $(document).ready(function(){
   $("#stopCommand").click(function(){
     $.ajax({url: "stopCommand.php", success: function(result){
-      alert("Command đã được ngừng!");
+      alert("Service đã được ngừng!");
+    }});
+  });
+});
+
+$(document).ready(function(){
+  $("#startCommand").click(function(){
+    $.ajax({url: "startCommand.php", success: function(result){
+      alert("Service đã được khởi động!");
+    }});
+  });
+});
+
+$(document).ready(function(){
+  $("#restartCommand").click(function(){
+    $.ajax({url: "restartCommand.php", success: function(result){
+      alert("Service đã được khởi động lại!");
     }});
   });
 });
@@ -46,18 +62,22 @@ $(document).ready(function(){
                 <input class="btn btn-dark waves-effect waves-light" type="submit" value="Restart Command">
                 </form>
             </div>
-            
+             <!-- Start Service -->
+            <button id="startCommand" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bx-play label-icon"></i> Start Service</button>
             <div class="d-flex flex-wrap gap-2 mx-1">
                 <form action="startCommand.php" method="post">
                 <input class="btn btn-dark waves-effect waves-light" type="submit" value="Start Command">
                 </form>
             </div>
+             <!-- Restart Service -->
+            <button id="restartCommand" class="btn btn-primary waves-effect btn-label waves-light"><i class="bx bx-reset label-icon"></i> Restart Service</button>
             <div class="d-flex flex-wrap gap-2 mx-1">
                 <form action="stopCommand.php" method="post">
                 <input class="btn btn-dark waves-effect waves-light" type="submit" value="Stop Command">
                 </form>
                 
-            </div>   
+            </div>  
+             <!-- Stop Service --> 
             <button id="stopCommand" class="btn btn-danger waves-effect btn-label waves-light"><i class="bx bx-block label-icon"></i> Stop Service</button>
             </div>          
         </div>
