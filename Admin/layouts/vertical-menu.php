@@ -53,7 +53,7 @@
             </div>  
              <!-- Stop Service --> 
              <div class="d-flex flex-wrap gap-2 mx-1">
-                <form action="restartCommand.php" method="post">
+                <form action="stopCommand.php" method="post">
                     <button class="btn btn-danger waves-effect btn-label waves-light">
                     <i class="bx bx-block label-icon"></i> Stop Service
                     </button>
@@ -67,8 +67,17 @@
         <div class="d-flex">   
         <div class="app-search d-none d-lg-block mx-2">
             <div class="position-relative">
-                <?php $status = shell_exec('sudo systemctl is-active squid'); ?>
-                <input type="text" class="form-control" placeholder="<?php echo $status; ?>">
+                <?php 
+                    $status = shell_exec('sudo systemctl is-active squid');
+                    $status = trim($status);  // loại bỏ khoảng trắng ở đầu và cuối
+                    ?>
+                    <?php
+                    if($status === 'active') {
+                        echo '<div class="alert alert-success" role="alert">Service is Actived</div>';
+                    } else {
+                        echo '<div class="alert alert-danger" role="alert">Service is Stop</div>';
+                    }
+                ?>
             </div>
             </div>
             <div class="dropdown d-inline-block d-lg-none ms-2">
@@ -160,10 +169,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="lock"></i>
-                        <span data-key="t-authentication">Linux Config</span>
+                        <span data-key="t-authentication2">Linux Config</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="rules-blockurl.php" data-key="t-login">System</a></li>
+                        <li><a href="rules-system.php" data-key="t-login">System</a></li>
                     
                     </ul>
                 </li>
