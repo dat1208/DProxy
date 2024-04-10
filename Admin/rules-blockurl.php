@@ -86,8 +86,8 @@
 <script>
     ClassicEditor
         .create(document.querySelector('#ckeditor-classic'), {
-        removePlugins: [ 'Heading', 'Link', 'CKFinder' ],
-        toolbar: []
+        removePlugins: [ 'Heading', 'Link', 'CKFinder', 'HTMLElement', 'Paragraph'],
+        toolbar: [ ],
     } )
         .then((editor) => {
             $.ajax({
