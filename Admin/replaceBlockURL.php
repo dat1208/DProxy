@@ -4,6 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $editor = $_POST['editor'];
   // write the input to the blocked_sites.txt file
   file_put_contents('/etc/squid/blocked_sites.txt', $editor);
-  echo "Chào mừng, " . $editor;
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 ?>
