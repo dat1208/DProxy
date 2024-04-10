@@ -1,29 +1,5 @@
 <header id="page-topbar">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#stopCommand").click(function(){
-    $.ajax({url: "stopCommand.php", success: function(result){
-      alert("Service đã được ngừng!");
-    }});
-  });
-});
-
-$(document).ready(function(){
-  $("#startCommand").click(function(){
-    $.ajax({url: "startCommand.php", success: function(result){
-      alert("Service đã được khởi động!");
-    }});
-  });
-});
-
-$(document).ready(function(){
-  $("#restartCommand").click(function(){
-    $.ajax({url: "restartCommand.php", success: function(result){
-      alert("Service đã được khởi động lại!");
-    }});
-  });
-});
+</script>
 </script>
     <div class="navbar-header">
         <div class="d-flex">
@@ -57,37 +33,43 @@ $(document).ready(function(){
                             <!-- App Header -->
 
             <div class="d-flex mt-2">
-            <div class="d-flex flex-wrap gap-2 mx-1">
-                <form action="restartCommand.php" method="post">
-                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Restart Command">
-                </form>
-            </div>
              <!-- Start Service -->
-            <button id="startCommand" class="btn btn-success waves-effect btn-label waves-light"><i class="bx bx-play label-icon"></i> Start Service</button>
             <div class="d-flex flex-wrap gap-2 mx-1">
                 <form action="startCommand.php" method="post">
-                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Start Command">
+                    <button class="btn btn-success waves-effect btn-label waves-light">
+                    <i class="bx bx-play label-icon"></i> Start Service
+                    </button>
                 </form>
             </div>
              <!-- Restart Service -->
-            <button id="restartCommand" class="btn btn-primary waves-effect btn-label waves-light"><i class="bx bx-reset label-icon"></i> Restart Service</button>
+            
             <div class="d-flex flex-wrap gap-2 mx-1">
-                <form action="stopCommand.php" method="post">
-                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Stop Command">
+                <form action="restartCommand.php" method="post">
+                    <button class="btn btn-primary waves-effect btn-label waves-light">
+                    <i class="bx bx-reset label-icon"></i> Restart Service
+                    </button>
                 </form>
                 
             </div>  
              <!-- Stop Service --> 
-            <button id="stopCommand" class="btn btn-danger waves-effect btn-label waves-light"><i class="bx bx-block label-icon"></i> Stop Service</button>
+             <div class="d-flex flex-wrap gap-2 mx-1">
+                <form action="restartCommand.php" method="post">
+                    <button class="btn btn-danger waves-effect btn-label waves-light">
+                    <i class="bx bx-block label-icon"></i> Stop Service
+                    </button>
+                </form>
+                
+            </div>  
+             
             </div>          
         </div>
 
-        <div class="d-flex">
-            
-            <div class="app-search d-none d-lg-block mx-2">
-                <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="<?php shell_exec('sudo systemctl is-active squid'); ?>">
-                </div>
+        <div class="d-flex">   
+        <div class="app-search d-none d-lg-block mx-2">
+            <div class="position-relative">
+                <?php $status = shell_exec('sudo systemctl is-active squid'); ?>
+                <input type="text" class="form-control" placeholder="<?php echo $status; ?>">
+            </div>
             </div>
             <div class="dropdown d-inline-block d-lg-none ms-2">
                 <button type="button" class="btn header-item" id="page-header-search-dropdown"
