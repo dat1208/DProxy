@@ -50,7 +50,7 @@
                             <p class="card-title-desc">1 Line Per URL</p>
                         </div>
                         <div class="card-body">
-                            <form id="myForm" action="/submit-url" method="post">
+                            <form id="myForm" action="replaceBlockURL.php" method="post">
                                 <textarea name="editor" id="ckeditor-classic"></textarea>
                                 <button class="btn btn-outline-success mt-2">Submit</button>
                             </form>
