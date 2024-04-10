@@ -81,15 +81,25 @@
 <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 
 <!-- init js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
 <script>
     ClassicEditor
         .create(document.querySelector('#ckeditor-classic'))
-        .then(editor => {
-            // Set initial data
-            editor.setData('Đây là nội dung khởi tạo mặc định');
-            
+        .then((editor) => {
+            $.ajax({
+                url: 'readBlockURL.php',
+                type: 'get',
+                success: function(response){
+                    // Set initial data
+                    editor.setData(response);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    editor.setData('Lỗi khi tải dữ liệu: ' + textStatus);
+                }
+            });
         })
-        .catch(error => {
+        .catch((error) => {
             console.error(error);
         });
 </script>
