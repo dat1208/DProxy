@@ -86,7 +86,7 @@
 <script>
     ClassicEditor
         .create(document.querySelector('#ckeditor-classic'), {
-        removePlugins: [ 'Heading', 'Link', 'CKFinder', 'HTMLElement', 'Paragraph'],
+        removePlugins: [ 'Heading', 'Link', 'CKFinder', 'HTMLElement'],
         toolbar: [ ],
     } )
         .then((editor) => {
