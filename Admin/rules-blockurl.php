@@ -85,7 +85,10 @@
 </script>
 <script>
     ClassicEditor
-        .create(document.querySelector('#ckeditor-classic'))
+        .create(document.querySelector('#ckeditor-classic'), {
+        removePlugins: [ 'Heading', 'Link', 'CKFinder' ],
+        toolbar: []
+    } )
         .then((editor) => {
             $.ajax({
                 url: 'readBlockURL.php',
