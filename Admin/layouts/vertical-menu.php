@@ -1,4 +1,14 @@
 <header id="page-topbar">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#stopCommand").click(function(){
+    $.ajax({url: "stopCommand.php", success: function(result){
+      alert("Command đã được ngừng!");
+    }});
+  });
+});
+</script>
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
@@ -25,14 +35,31 @@
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
+            <div>
+                
+            </div>
+                            <!-- App Header -->
 
-            <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
-                <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="<?php echo $language["Search"]; ?>">
-                    <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>
-                </div>
-            </form>
+            <div class="d-flex mt-2">
+            <div class="d-flex flex-wrap gap-2 mx-1">
+                <form action="restartCommand.php" method="post">
+                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Restart Command">
+                </form>
+            </div>
+            
+            <div class="d-flex flex-wrap gap-2 mx-1">
+                <form action="startCommand.php" method="post">
+                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Start Command">
+                </form>
+            </div>
+            <div class="d-flex flex-wrap gap-2 mx-1">
+                <form action="stopCommand.php" method="post">
+                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Stop Command">
+                </form>
+                
+            </div>   
+            <button id="stopCommand" class="btn btn-danger waves-effect btn-label waves-light"><i class="bx bx-block label-icon"></i> Stop Service</button>
+            </div>          
         </div>
 
         <div class="d-flex">
@@ -49,7 +76,6 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-search-dropdown">
-        
                     <form class="p-3">
                         <div class="form-group m-0">
                             <div class="input-group">
@@ -64,16 +90,13 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item bg-soft-light border-start border-end" id="page-header-user-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                    <img class="rounded-circle header-profile-user" src="https://static.vecteezy.com/system/resources/previews/011/490/381/non_2x/happy-smiling-young-man-avatar-3d-portrait-of-a-man-cartoon-character-people-illustration-isolated-on-white-background-vector.jpg"
                         alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1 fw-medium"><?php echo $language["Shawn_L"]; ?>.</span>
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium">Đạt.</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="apps-contacts-profile.php"><i class="mdi mdi-face-profile font-size-16 align-middle me-1"></i> <?php echo $language["Profile"]; ?></a>
-                    <a class="dropdown-item" href="auth-lock-screen.php"><i class="mdi mdi-lock font-size-16 align-middle me-1"></i> <?php echo $language["Lock_screen"]; ?> </a>
-                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="logout.php"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> <?php echo $language["Logout"]; ?></a>
                 </div>
             </div>

@@ -51,31 +51,10 @@
                             <div class="card-header">
                                 <h4 class="card-title">Test Function Area</h4>
                                
-                            </div><!-- end card header -->
-
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap gap-2">
-                                <form action="restartCommand.php" method="post">
-                                <input class="btn btn-dark waves-effect waves-light" type="submit" value="Restart Command">
-                                </form>
-                                </div>
-                            </div><!-- end card-body -->
-                            <div class="card-body">
-                                <div class="d-flex flex-wrap gap-2">
-                                <form action="startCommand.php" method="post">
-                                 <input class="btn btn-dark waves-effect waves-light" type="submit" value="Start Command">
-                                </form>
-                                </div>
-                            </div><!-- end card-body -->
-                            <div class="card-body">
-                             <div class="d-flex flex-wrap gap-2">
-                            <form action="stopCommand.php" method="post">
-                            <input classdiv="btn btn-dark waves-effect waves-light" type="submit" value="Stop Command">
-                            </form>
-                                </div>
-                            </div><!-- end card-body -->
+                            </div>
 
                             
+                            <!-- main code -->
                             
                             
                         </div><!-- end card -->
