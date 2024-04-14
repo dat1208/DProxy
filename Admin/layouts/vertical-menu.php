@@ -1,6 +1,29 @@
 <header id="page-topbar">
-</script>
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js" ></script>
+<style>
+        /* Đặt phần tử chứa animation vào giữa màn hình */
+        #lottie-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            z-index: 10; /* Đảm bảo rằng animation sẽ nằm trên lớp phủ */
+        }
+
+        /* Thêm lớp phủ mờ cho nền, nhưng ẩn nó cho đến khi nút được nhấn */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 9; /* Đảm bảo rằng lớp phủ sẽ nằm dưới animation */
+            display: none; /* Ẩn lớp phủ cho đến khi nút được nhấn */
+        }
+    </style>
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
@@ -45,7 +68,7 @@
             
             <div class="d-flex flex-wrap gap-2 mx-1">
                 <form action="restartCommand.php" method="post">
-                    <button class="btn btn-primary waves-effect btn-label waves-light">
+                    <button onclick="playLottieAnimation()" class="btn btn-primary waves-effect btn-label waves-light">
                     <i class="bx bx-reset label-icon"></i> Restart Service
                     </button>
                 </form>
@@ -60,10 +83,18 @@
                 </form>
                 
             </div>  
+
+            <div class="d-flex flex-wrap gap-2 mx-1">
+                    <button onclick="playLottieAnimation()" class="btn btn-danger waves-effect btn-label waves-light">
+                    <i class="bx bx-block label-icon"></i>Test Animation
+                    </button>
+                
+            </div>  
              
             </div>          
         </div>
-
+        <div id="lottie-animation" style="width: 200px; height: 200px;"></div>
+        <div id="overlay"></div>
         <div class="d-flex">   
         <div class="app-search d-none d-lg-block mx-2">
             <div class="position-relative">
@@ -116,6 +147,24 @@
         
     </div>
 </header>
+<script>
+        // Định nghĩa hàm playLottieAnimation
+        function playLottieAnimation() {
+            // Hiển thị lớp phủ
+            document.getElementById('overlay').style.display = 'block';
+            // Tải animation từ file JSON
+            var animation = lottie.loadAnimation({
+              container: document.getElementById('lottie-animation'), // ID của phần tử div cần hiển thị animation
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              path: 'assets/loading.json' // Đường dẫn đến file Lottie của bạn
+            });
+            console.log("Animation chạy");
+            // Phát animation
+            animation.play();
+        }
+    </script>
 
 <!-- ========== Left Sidebar Start ========== -->
 <!-- ========== Left Sidebar Start ========== -->
@@ -162,7 +211,7 @@
                         <span data-key="t-authentication">Rules</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="rules-blockurl.php" data-key="t-login">Block URL</a></li>
+                        <li><a href="rules-blockurl.php" data-key="t-block-url">Block URL</a></li>
                     
                     </ul>
                 </li>
@@ -172,7 +221,7 @@
                         <span data-key="t-authentication2">Linux Config</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="rules-system.php" data-key="t-login">System</a></li>
+                        <li><a href="rules-system.php" data-key="t-system">System</a></li>
                     
                     </ul>
                 </li>
