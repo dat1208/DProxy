@@ -59,7 +59,7 @@
              <!-- Start Service -->
             <div class="d-flex flex-wrap gap-2 mx-1">
                 <form action="startCommand.php" method="post">
-                    <button class="btn btn-success waves-effect btn-label waves-light">
+                    <button onclick="playLottieAnimation()" class="btn btn-success waves-effect btn-label waves-light">
                     <i class="bx bx-play label-icon"></i> Start Service
                     </button>
                 </form>
@@ -77,19 +77,12 @@
              <!-- Stop Service --> 
              <div class="d-flex flex-wrap gap-2 mx-1">
                 <form action="stopCommand.php" method="post">
-                    <button class="btn btn-danger waves-effect btn-label waves-light">
+                    <button onclick="playLottieAnimation()" class="btn btn-danger waves-effect btn-label waves-light">
                     <i class="bx bx-block label-icon"></i> Stop Service
                     </button>
                 </form>
                 
-            </div>  
-
-            <div class="d-flex flex-wrap gap-2 mx-1">
-                    <button onclick="playLottieAnimation()" class="btn btn-danger waves-effect btn-label waves-light">
-                    <i class="bx bx-block label-icon"></i>Test Animation
-                    </button>
-                
-            </div>  
+            </div> 
              
             </div>          
         </div>
