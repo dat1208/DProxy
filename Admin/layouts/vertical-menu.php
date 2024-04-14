@@ -1,5 +1,6 @@
 <header id="page-topbar">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js" ></script>
+
 <style>
         /* Đặt phần tử chứa animation vào giữa màn hình */
         #lottie-animation {
@@ -173,15 +174,15 @@
 
                 <li>
                     <a href="index.php">
-                        <i data-feather="home"></i>
+                        <i class="bx bx-home label-icon"></i>
                         <span data-key="t-dashboard"><?php echo $language["Dashboard"]; ?></span>
                     </a>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="grid"></i>
-                        <span data-key="t-apps">Proxy</span>
+                    <i class="bx bx-network-chart label-icon"></i>
+                    <span data-key="t-apps">Proxy</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
@@ -200,17 +201,18 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="lock"></i>
+                    <i class="bx bx-lock label-icon"></i>
                         <span data-key="t-authentication">Rules</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="rules-blockurl.php" data-key="t-block-url">Block URL</a></li>
-                    
+                        <li><a href="rules-blockurl.php" data-key="t-allow-client">Allow Client</a></li>
                     </ul>
+                    
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                        <i data-feather="lock"></i>
+                    <i class="bx bx-server label-icon"></i>
                         <span data-key="t-authentication2">Linux Config</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
