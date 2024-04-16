@@ -53,7 +53,7 @@
                                 <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Total bandwidth per IP Address.</h5>
                             </div>
                             <div class="card-body">
-                                <p id="total-bandwidth-per-ip" class="card-text text-primary">Loading...</p>
+                                <p style="font-size: xx-small;" id="total-bandwidth-per-ip" class="card-text text-primary">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -64,7 +64,7 @@
                                 <h5 class="my-0 text-danger"><i class="mdi mdi-block-helper me-3"></i>Denied access per IP Address</h5>
                             </div>
                             <div class="card-body">
-                                <p id="denied-acess-per-ip" class="card-text text-danger">Loading...</p>
+                                <p style="font-size: xx-small;" id="denied-acess-per-ip" class="card-text text-danger">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -75,7 +75,7 @@
                                 <h5 class="my-0 text-success"><i class="mdi mdi-check-all me-3"></i>Total bandwidth per Website</h5>
                             </div>
                             <div class="card-body">
-                                <p id="total-bandwidth-per-web" class="card-text text-success">Loading...</p>
+                                <p style="font-size: xx-small;" id="total-bandwidth-per-web" class="card-text text-success">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
