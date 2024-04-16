@@ -70,7 +70,7 @@
                                 <button class="btn btn-outline-danger mt-2">Read Denied</button>
                             </form>
                             <div class="card-body">
-                                <p class="card-text">Loading...</p>
+                                <p id="denied-acess-per-ip" class="card-text">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -84,7 +84,7 @@
                                 <button class="btn btn-outline-danger mt-2">Read</button>
                             </form>
                             <div class="card-body">
-                                <p class="card-text">Loading...</p>
+                                <p id="total-bandwidth-per-web" class="card-text">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -109,6 +109,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </script>
 <script>
+/////
 $(document).ready(function(){
     $.ajax({
         url: 'read-log/readTotalBandwidthPerIP.php',
@@ -119,6 +120,34 @@ $(document).ready(function(){
         },
         error: function() {
             $('#total-bandwidth-per-ip').html("Có lỗi xảy ra khi tải dữ liệu.");
+        }
+    });
+});
+//////
+$(document).ready(function(){
+    $.ajax({
+        url: 'read-log/readDenied.php',
+        type: 'post',
+        success: function(data) {
+            console.log(data);
+            $('#denied-acess-per-ip').html(data);
+        },
+        error: function() {
+            $('#denied-acess-per-ip').html("Có lỗi xảy ra khi tải dữ liệu.");
+        }
+    });
+});
+///////
+$(document).ready(function(){
+    $.ajax({
+        url: 'read-log/readTotalBandwidthPerWeb.php',
+        type: 'post',
+        success: function(data) {
+            console.log(data);
+            $('#total-bandwidth-per-web').html(data);
+        },
+        error: function() {
+            $('#total-bandwidth-per-web').html("Có lỗi xảy ra khi tải dữ liệu.");
         }
     });
 });
