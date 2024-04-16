@@ -56,8 +56,7 @@
                                 <button class="btn btn-outline-danger mt-2">Read</button>
                             </form>
                             <div class="card-body">
-                                <h5 class="card-title">card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p id="total-bandwidth-per-ip" class="card-text">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -71,8 +70,7 @@
                                 <button class="btn btn-outline-danger mt-2">Read Denied</button>
                             </form>
                             <div class="card-body">
-                                <h5 class="card-title">card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -86,8 +84,7 @@
                                 <button class="btn btn-outline-danger mt-2">Read</button>
                             </form>
                             <div class="card-body">
-                                <h5 class="card-title">card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Loading...</p>
                             </div>
                         </div>
                     </div><!-- end col -->
@@ -108,6 +105,23 @@
 
 <!-- JAVASCRIPT -->
 <?php include 'layouts/vendor-scripts.php'; ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+    $.ajax({
+        url: 'read-log/readTotalBandwidthPerIP.php',
+        type: 'GET',
+        success: function(data) {
+            $('#total-bandwidth-per-ip').html(data);
+        },
+        error: function() {
+            $('#total-bandwidth-per-ip').html("Có lỗi xảy ra khi tải dữ liệu.");
+        }
+    });
+});
+</script>
 
 <!-- apexcharts -->
 <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
