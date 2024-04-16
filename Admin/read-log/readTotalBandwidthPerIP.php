@@ -1,6 +1,7 @@
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $output = shell_exec('python /root/log.py -a');
-    }
-    echo $output;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $command = 'python /root/log.py -a 2>&1';
+    $output = shell_exec($command);
+    echo "<pre>$output</pre>";
+}
 ?>
