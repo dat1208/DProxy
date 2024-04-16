@@ -206,7 +206,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="rules-blockurl.php" data-key="t-block-url">Block URL</a></li>
-                        <li><a href="rules-blockurl.php" data-key="t-allow-client">Allow Client</a></li>
+                        <li><a href="rules-allow-clients.php" data-key="t-allow-client">Allow Client</a></li>
                     </ul>
                     
                 </li>
