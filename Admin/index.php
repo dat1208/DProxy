@@ -52,9 +52,6 @@
                             <div class="card-header bg-transparent border-primary">
                                 <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Total bandwidth per IP Address.</h5>
                             </div>
-                            <form action="read-log/readTotalBandwidthPerIP.php" method="post">
-                                <button class="btn btn-outline-danger mt-2">Read</button>
-                            </form>
                             <div class="card-body">
                                 <p id="total-bandwidth-per-ip" class="card-text">Loading...</p>
                             </div>
@@ -66,9 +63,6 @@
                             <div class="card-header bg-transparent border-danger">
                                 <h5 class="my-0 text-danger"><i class="mdi mdi-block-helper me-3"></i>Denied access per IP Address</h5>
                             </div>
-                            <form action="read-log/readDenied.php" method="post">
-                                <button class="btn btn-outline-danger mt-2">Read Denied</button>
-                            </form>
                             <div class="card-body">
                                 <p id="denied-acess-per-ip" class="card-text">Loading...</p>
                             </div>
@@ -80,9 +74,6 @@
                             <div class="card-header bg-transparent border-success">
                                 <h5 class="my-0 text-success"><i class="mdi mdi-check-all me-3"></i>Total bandwidth per Website</h5>
                             </div>
-                            <form action="read-log/readTotalBandwidthPerWeb.php" method="post">
-                                <button class="btn btn-outline-danger mt-2">Read</button>
-                            </form>
                             <div class="card-body">
                                 <p id="total-bandwidth-per-web" class="card-text">Loading...</p>
                             </div>
