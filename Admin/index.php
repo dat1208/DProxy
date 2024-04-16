@@ -114,6 +114,7 @@ $(document).ready(function(){
         url: 'read-log/readTotalBandwidthPerIP.php',
         type: 'GET',
         success: function(data) {
+            console.log(data);
             $('#total-bandwidth-per-ip').html(data);
         },
         error: function() {
