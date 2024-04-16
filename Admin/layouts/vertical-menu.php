@@ -188,13 +188,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
                             <a href="proxy-list.php">
-                                <span data-key="t-calendar">List</span>
-                            </a>
-                        </li>
-        
-                        <li>
-                            <a href="proxy-configfile.php">
-                                <span data-key="t-chat">Config File</span>
+                                <span data-key="t-calendar">Port Management</span>
                             </a>
                         </li>
                     </ul>
