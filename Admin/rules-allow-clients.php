@@ -48,6 +48,9 @@
                         <div class="card-header">
                             <h4 class="card-title">Add, Edit, Delete IP Below</h4>
                             <p class="card-title-desc">1 Line Per IP</p>
+                             <!-- My ip-->
+                             <p class="card-title-desc font-size-16">Current IP: <span id="current-ip">Loading...</span>                             
+                            </p>
                         </div>
                         <div class="card-body">
                             <form id="myForm" action="replaceAllowIP.php" method="post">
@@ -80,6 +83,7 @@
 <!-- ckeditor -->
 <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 
+
 <!-- init js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
@@ -105,6 +109,18 @@
         .catch((error) => {
             console.error(error);
         });
+</script>
+<script>
+    // Gọi API để lấy IP
+    fetch('https://api.ipify.org/')
+    .then(response => response.text())
+    .then(ip => {
+        // Hiển thị IP lên màn hình
+        document.getElementById('current-ip').textContent = ip;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 </script>
 <script src="assets/js/app.js"></script>
 
