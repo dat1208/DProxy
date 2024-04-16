@@ -46,19 +46,52 @@
 
                 <div class="row">
 
-                    <div class="col-xl-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Test Function Area</h4>
-                               
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card border border-primary">
+                            <div class="card-header bg-transparent border-primary">
+                                <h5 class="my-0 text-primary"><i class="mdi mdi-bullseye-arrow me-3"></i>Total bandwidth per IP Address.</h5>
                             </div>
-
-                            
-                            <!-- main code -->
-                            
-                            
-                        </div><!-- end card -->
+                            <form action="read-log/readTotalBandwidthPerIP.php" method="post">
+                                <button class="btn btn-outline-danger mt-2">Read</button>
+                            </form>
+                            <div class="card-body">
+                                <h5 class="card-title">card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
                     </div><!-- end col -->
+
+                    <div class="col-lg-4">
+                        <div class="card border border-danger">
+                            <div class="card-header bg-transparent border-danger">
+                                <h5 class="my-0 text-danger"><i class="mdi mdi-block-helper me-3"></i>Denied access per IP Address</h5>
+                            </div>
+                            <form action="read-log/readDenied.php" method="post">
+                                <button class="btn btn-outline-danger mt-2">Read Denied</button>
+                            </form>
+                            <div class="card-body">
+                                <h5 class="card-title">card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+
+                    <div class="col-lg-4">
+                        <div class="card border border-success">
+                            <div class="card-header bg-transparent border-success">
+                                <h5 class="my-0 text-success"><i class="mdi mdi-check-all me-3"></i>Total bandwidth per Website</h5>
+                            </div>
+                            <form action="read-log/readTotalBandwidthPerWeb.php" method="post">
+                                <button class="btn btn-outline-danger mt-2">Read</button>
+                            </form>
+                            <div class="card-body">
+                                <h5 class="card-title">card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div><!-- end col -->
+                </div>
                 </div><!-- end row -->
                 <!-- end row -->
             </div>
