@@ -182,20 +182,6 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
-                    <i class="bx bx-network-chart label-icon"></i>
-                    <span data-key="t-apps">Proxy</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="proxy-list.php">
-                                <span data-key="t-calendar">Port Management</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow">
                     <i class="bx bx-lock label-icon"></i>
                         <span data-key="t-authentication">Rules</span>
                     </a>
@@ -204,16 +190,6 @@
                         <li><a href="rules-allow-clients.php" data-key="t-allow-client">Allow Client</a></li>
                     </ul>
                     
-                </li>
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow">
-                    <i class="bx bx-server label-icon"></i>
-                        <span data-key="t-authentication2">Linux Config</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="rules-system.php" data-key="t-system">System</a></li>
-                    
-                    </ul>
                 </li>
             </ul>
         </div>
